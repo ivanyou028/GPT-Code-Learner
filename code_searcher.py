@@ -1,7 +1,6 @@
 import re
 import subprocess
 
-
 def extract_grep_output(line):
     # Regular expressions to match the grep output lines
     regex_colon = r'(.*):(\d+):(.*)'

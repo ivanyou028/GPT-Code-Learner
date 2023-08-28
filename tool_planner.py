@@ -96,8 +96,5 @@ def user_input_handler(input):
 
 
 if __name__ == "__main__":
-    # results = user_input_handler("What is the usage of the function traffic_interval?")
-    # print(results)
-
     results = user_input_handler("How to build a knowledge base?")
     print(results)

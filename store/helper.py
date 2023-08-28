@@ -1,4 +1,4 @@
-from splitter import load_documents, load_urls
+from store.splitter import load_documents, load_urls
 import openai
 from dotenv import load_dotenv, find_dotenv
 import os

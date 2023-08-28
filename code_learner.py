@@ -2,8 +2,9 @@ import gradio as gr
 import json
 import requests
 import os
+from store.helper import get_or_create_knowledge_from_repo
 from termcolor import colored
-from repo_parser import clone_repo, generate_or_load_knowledge_from_repo
+from repo.helper import clone_repo
 import tool_planner
 
 llm_type = os.environ.get('LLM_TYPE', "local")
@@ -150,7 +151,7 @@ def analyze_repo(repo_url, progress=gr.Progress()):
     repo_information = clone_repo(repo_url, progress)
 
     progress(0.6, desc="Building Knowledge Base")
-    generate_or_load_knowledge_from_repo()
+    get_or_create_knowledge_from_repo()
 
     if repo_information is not None:
         return init_system_prompt + repo_information, "Analysis completed"
